@@ -34,6 +34,8 @@
               "src/assets"
             ],
             "styles": [
+              "src/streamAMG-theme.scss",
+              "src/screen-breakpoint-mixin.scss",
               "src/styles.scss"
             ],
             "scripts": []
