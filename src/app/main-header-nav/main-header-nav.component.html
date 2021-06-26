@@ -1,0 +1,20 @@
+<mat-toolbar class='header-toolbar' color='primary' >
+  <div xFlex fxLayout class='logo' position="start" fxLayoutAlign='start'>
+    <img src="../assets/logo.svg"/>
+  </div>
+
+
+  <div xFlex fxLayout='column' fxLayoutAlign='end' fxHide.gt-xs>
+    <app-main-header-side-nav></app-main-header-side-nav>
+  </div>
+
+  <div fxFlex fxLayout="row" fxLayoutAlign="flex-end" position="end" fxHide.xs>
+    <mat-nav-list color='primary' fxLayout="row" >
+        <a mat-list-item  routerLink='/home'> Home </a>
+        <a mat-list-item routerLink='/purchasePass'> Purchase pass </a>
+        <a mat-list-item routerLink='/FAQs'> FAQs </a>
+        <a mat-list-item routerLink='/my-account'> My Account </a>
+        <a mat-list-item (click)="openLoginDialog()"> Login </a>
+    </mat-nav-list>
+  </div>
+</mat-toolbar>

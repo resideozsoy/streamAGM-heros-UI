@@ -1,0 +1,98 @@
+@import '../../screen-breakpoint-mixin';
+.home-component {
+    min-height: calc(100vh - 220px);
+    padding-top: -64px;
+    background-image: url("../../assets/hero/smoke2.png");
+        //opacity: 1;
+        background-repeat: repeat;
+        background-position: top;
+        background-size: cover;
+
+    @include for-phone-only {
+        padding-top: 0px;
+        min-height: calc(100vh - 340px);
+    }
+
+    .main {
+        z-index: 2;
+    }
+
+    .center {
+        display: flex;
+        position: fixed;
+        background-color: transparent;
+        top: 50%;
+        left: 45%;
+        @include for-phone-only {
+            left: 32%;
+        }
+        margin-top: -150px;
+        margin-left: -100px;
+        z-index: 100;
+    }
+
+    .play-button {
+        border: 1px solid #d43b38;
+        padding: 0;
+        background-color: transparent;
+        .inner {
+            margin: 2px;
+            background-color: #d43b38;
+            text-align: left;
+            font: normal normal 900 18px/31px Nimbus Sans Cond L;
+            letter-spacing: 0px;
+            color: #ffffff;
+            text-transform: uppercase;
+            opacity: 1;
+        }
+    }
+
+    .icon-text {
+        display: flex;
+        align-items: center;
+    }
+
+    .rotate {
+        transform: rotate(-90deg);
+        color: white;
+        text-transform: uppercase;
+        font: normal normal bold 15px/21px Nimbus Sans;
+        text-shadow: 0px 3px 6px #00000029;
+        opacity: 1;
+        min-width: none;
+    }
+
+    .background-image {
+        width: 55vw;
+        max-height: 100%;
+        height: auto;
+        z-index: 2;
+
+        @include for-phone-only {
+            width: 65vw;
+        }
+    }
+
+    .background-image-right {
+        position: absolute;
+        width: 55vw;
+        left: 45vw;
+        max-height: 100%;
+        min-height:327px;
+        height: auto;
+        z-index: 1;
+        @include for-phone-only {
+            width: 75vw;
+            left: 25vw;
+            z-index: 3;
+        }
+    }
+
+    .second-layer-images {
+        position: absolute;
+        width: 100vw;
+        top: 34vh;
+        max-height: 100%;
+        z-index: 10;
+    }
+}

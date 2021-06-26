@@ -1,0 +1,29 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.mat-list-item {
+  color: #ffffff;
+  font-family: nimbus-sans, Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-toolbar.mat-primary {
+  background: transparent;
+  font-family: nimbus-sans, Roboto, "Helvetica Neue", sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+a {
+  text-decoration: none;
+  color:lightgrey;
+}
+
+a:hover, a:active {
+  color: white;
+}

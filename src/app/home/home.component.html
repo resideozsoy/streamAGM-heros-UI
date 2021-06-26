@@ -1,0 +1,31 @@
+<div class='home-component hero' [ngClass]="{mobile: deviceInfo?.isMobile}" fxFlex fxLayout='row'>
+    <div fxFlex fxLayoutAlign="flex-start">
+        <img class='background-image' alt='background image 1' src="../../assets/hero/fighter-bg1.png">
+    </div>
+    <div class="center">
+        <button mat-raised-button fxFlexAlign='center, center' color="warn">
+            <div class='inner icon-text'>
+                <mat-icon>
+                    play_circle_filled
+                </mat-icon>
+                <a (click)="openWatchVideoDialog()"> watch live now </a>
+            </div>
+        </button>
+        <button class='rotate' mat-button> or</button>
+        <button routerLink='/purchase-pass' mat-raised-button color="warn">
+            purchase pass
+        </button>
+    </div>
+    <div fxFlex fxLayoutAlign="flex-start">
+        <img class='background-image-right' alt='background image 2' src="../../assets/hero/fighter-bg2.png">
+    </div>
+    <div class='second-layer-images' fxFlex fxLayout='row' fxHide.xs>
+        <div fxFlex fxLayoutAlign="flex-start">
+            <img class='background-image' alt='foreground image 1' src="../../assets/hero/fighter1.png">
+        </div>
+        <div fxFlex fxLayoutAlign="flex-end">
+            <img class='background-image-right' alt='foreground image 2' src="../../assets/hero/fighter2.png">
+        </div>
+    </div>
+
+</div>

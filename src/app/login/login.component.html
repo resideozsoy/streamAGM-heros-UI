@@ -1,0 +1,65 @@
+<div class="login-wrapper" fxLayout="row" fxFlexFill fxLayoutAlign="center center">
+
+    <mat-card class="login" fxLayout="column" fxFlexFill fxLayoutGap='45px'>
+        <button class="close" fxFlexAlign='end' mat-icon-button (click)="close()">x</button>
+
+        <mat-card-header fxLayout="row" fxFlexAlign='center' fxLayoutAlign="center center">
+            <div fxLayout="column" fxLayoutGap='55px'>
+                <mat-card-title fxFlexAlign='center'>Sign In</mat-card-title>
+                <div>
+                    <img alt="logo" fxFlexAlign='center' class='logo' src="../assets/logo black.svg" />
+                </div>
+            </div>
+
+        </mat-card-header>
+
+        <form novalidate (ngSubmit)="login(loginForm)" #loginForm="ngForm" class="login-form" fxLayout="row" fxFlexAlign='center'
+            fxLayoutAlign="center center">
+            <div fxLayout="column" fxFlexAlign='center'>
+                 <mat-card-content fxLayout="column" fxFlexAlign='center'>
+                <mat-form-field class='user-name' fxFlexAlign='center'>
+                    <input matInput placeholder="Username" required minlength="3" [(ngModel)]=loginItem.username
+                        name="username" class='user-name' #userNameVar="ngModel"
+                        [ngClass]="{'is-invalid': (userNameVar.touched || userNameVar.dirty) && !userNameVar.valid }" />
+                    <span class="invalid-feedback"
+                        *ngIf="(userNameVar.touched || userNameVar.dirty) && !userNameVar.valid">
+                        <span *ngIf="userNameVar.errors?.required">
+                            Please enter your user name.
+                        </span>
+                        <span *ngIf="userNameVar.errors?.minlength">
+                            The user name must be longer than 3 characters.
+                        </span>
+                    </span>
+
+                </mat-form-field>
+                <mat-form-field fxFlexAlign='center'>
+                    <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" required
+                        [(ngModel)]=loginItem.password name='password' #passwordVar="ngModel"
+                        [ngClass]="{'is-invalid': (passwordVar.touched || passwordVar.dirty) && !passwordVar.valid }">
+                    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    <mat-hint *ngIf="!passwordVar.value">Enter your password</mat-hint>
+                    <span class="invalid-feedback"
+                        *ngIf="(passwordVar.touched || passwordVar.dirty) && !passwordVar.valid">
+                        <span *ngIf="passwordVar.errors?.required">
+                            Please enter your password.
+                        </span>
+                        <span *ngIf="passwordVar.errors?.minlength">
+                            The password must be longer than 16 characters.
+                        </span>
+                    </span>
+
+                </mat-form-field>
+            </mat-card-content>
+ <mat-card-footer fxLayout="row" fxLayoutAlign="center center">
+            <button type="submit" [disabled]="!loginForm.valid" mat-raised-button color="warn" class='login-button' color='warn'>login</button>
+        </mat-card-footer>
+            </div>
+           
+        </form>
+       
+    </mat-card>
+</div>
+<br>Dirty: {{ loginForm.dirty }}
+<br>Touched: {{ loginForm.touched }}
+<br>Valid: {{ loginForm.valid }}
+<br>Value: {{ loginForm.value | json }}

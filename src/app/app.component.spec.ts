@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'streamAGM-heros-ui'`, () => {
+  it(`should have as title 'hero'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('streamAGM-heros-ui');
+    expect(app.title).toEqual('hero');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('streamAGM-heros-ui app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('hero app is running!');
   });
 });

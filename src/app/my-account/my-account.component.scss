@@ -1,0 +1,18 @@
+@import "../../screen-breakpoint-mixin";
+.account-container {
+    min-height: calc(100vh - 220px);
+    background: #ffffff 0% 0% no-repeat padding-box;
+    opacity: 1;
+    margin-top: 64px;
+
+    @include for-phone-only {
+        padding-top: 0px;
+        min-height: calc(100vh - 340px);
+    }
+}
+
+.title-group {
+    h1 {
+        text-transform: uppercase;
+    }
+}
