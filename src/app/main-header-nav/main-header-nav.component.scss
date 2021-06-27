@@ -24,11 +24,17 @@ mat-list-item {
   z-index: 100;
 }
 
-a {
-  text-decoration: none;
+.mat-list-base .mat-list-item {
+  font: normal normal normal 16px/22px Nimbus Sans;
   color:lightgrey;
+  a {
+    text-decoration: none;
+    color:lightgrey;
+  }
+  
+  a:hover, a:active {
+    color: white;
+  }
 }
 
-a:hover, a:active {
-  color: white;
-}
+
