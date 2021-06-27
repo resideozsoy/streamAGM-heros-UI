@@ -1,6 +1,6 @@
 <mat-toolbar class='header-toolbar' color='primary' >
   <div xFlex fxLayout class='logo' position="start" fxLayoutAlign='start'>
-    <img src="../assets/logo.svg"/>
+    <img alt='assets/logo.svg' src="../assets/logo.svg"/>
   </div>
 
 
@@ -14,7 +14,8 @@
         <a mat-list-item routerLink='/purchasePass'> Purchase pass </a>
         <a mat-list-item routerLink='/FAQs'> FAQs </a>
         <a mat-list-item routerLink='/my-account'> My Account </a>
-        <a mat-list-item (click)="openLoginDialog()"> Login </a>
+        <a *ngIf='!loggedIn' mat-list-item (click)="openLoginDialog()"> Login </a>
+        <a *ngIf='loggedIn' mat-list-item (click)="logout()"> Logout </a>
     </mat-nav-list>
   </div>
 </mat-toolbar>

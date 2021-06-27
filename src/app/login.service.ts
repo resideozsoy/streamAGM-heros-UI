@@ -11,7 +11,7 @@ import * as moment from 'moment';
   providedIn: 'root'
 })
 export class LoginService {
-  private loggedIn = new BehaviorSubject<boolean>(false);
+  public loggedIn = new BehaviorSubject<boolean>(false);
   readonly baseURL = 'http://localhost:4000';
   currentUser = undefined;
 
@@ -64,7 +64,7 @@ export class LoginService {
     const expiresAt = moment().add(authResult.expiresIn, 'hours');
 
     this.currentUser = authResult || new User();
-    this.loggedIn.next(false);
+    this.loggedIn.next(true);
     if (authResult['token']) {
       localStorage.setItem('token', authResult['token']); //token here is stored in a local storage
     }
