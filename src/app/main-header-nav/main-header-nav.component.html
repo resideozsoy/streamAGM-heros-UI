@@ -13,7 +13,7 @@
         <a mat-list-item  routerLink='/home'> Home </a>
         <a mat-list-item routerLink='/purchasePass'> Purchase pass </a>
         <a mat-list-item routerLink='/FAQs'> FAQs </a>
-        <a mat-list-item routerLink='/my-account'> My Account </a>
+        <a *ngIf='loggedIn' mat-list-item routerLink='/my-account'> My Account </a>
         <a *ngIf='!loggedIn' mat-list-item (click)="openLoginDialog()"> Login </a>
         <a *ngIf='loggedIn' mat-list-item (click)="logout()"> Logout </a>
     </mat-nav-list>
