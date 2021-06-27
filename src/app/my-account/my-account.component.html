@@ -1,32 +1,30 @@
+<mat-drawer-container fxFlex fxFlexLayout='row' fxFlexFill [class.drawer-opened]="drawer.opened"
+  class="account-container">
+  <mat-drawer #drawer class="drawer" mode="side" opened="true">
+    <div fxLayout="column" fxLayoutGap='45px'>
+      <mat-toolbar class="header">
+        <mat-card-header> My Account</mat-card-header>
+        <mat-icon class="close" (click)="drawer.close()">close</mat-icon>
+      </mat-toolbar>
 
-<mat-drawer-container fxFlex fxFlexLayout='row' fxFlexFill
-[class.drawer-opened]="drawer.opened"
-class="account-container">
-<mat-drawer #drawer 
-  class="drawer" 
-  mode="side" 
-  opened="true">
+      <div class="drawer-contents" fxFlex fxFlexLayout='column'>
+        <a mat-button [routerLink]="'/accounts'"> Accounts </a>
+        <a mat-button [routerLink]="'/create-account'"> Create Account </a>
+        <a mat-button [routerLink]="'/contacts'"> Contacts </a>
+        <a mat-button [routerLink]="'/create-contact'"> Create Contact </a>
+        <a mat-button [routerLink]="'/activities'"> Activities </a>
+        <a mat-button [routerLink]="'/create-activity'"> Create Activity </a>
+      </div>
+    </div>
 
-  <mat-toolbar class="header">
-    <mat-card-header> My Profile</mat-card-header>
-    <mat-icon class="close"
-   (click)="drawer.close()">close</mat-icon>
-  </mat-toolbar>
-  <div class="contents">
-    Drawer
-  </div>
-</mat-drawer>
-<mat-toolbar class="main header">
-  <mat-icon
-    *ngIf="!drawer.opened"
-    (click)="drawer.toggle()">
-    menu
-  </mat-icon>
-  <mat-card-header> My Profile</mat-card-header>
-</mat-toolbar>
-
-<div fxFlex fxFlexLayout='row' fxFlexFill class="main contents">
-  <div fxFlex fxFlexLayout='row' fxFlexFill>
+  </mat-drawer>
+  <mat-drawer-content fxFlex fxFlexLayout='row' fxFlexFill>
+    <mat-toolbar class="profile-toolbar">
+      <mat-icon *ngIf="!drawer.opened" (click)="drawer.toggle()">
+        menu
+      </mat-icon>
+      <mat-card-header> My Profile</mat-card-header>
+    </mat-toolbar>
     <form fxFlex fxFlexLayout='row' fxFlexFill> 
       <mat-card fxFlex fxFlexLayout='row' fxFlexFill> 
         
@@ -55,6 +53,6 @@ class="account-container">
         </mat-card-footer>
       </mat-card>
     </form>
-  </div>
-</div>
+   
+  </mat-drawer-content>
 </mat-drawer-container>

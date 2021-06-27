@@ -1,9 +1,10 @@
+@use '~@angular/material' as mat;
 @import "../../screen-breakpoint-mixin";
+
 .account-container {
-    min-height: calc(100vh - 220px);
+    min-height: calc(100vh - 160px);
     background: #ffffff 0% 0% no-repeat padding-box;
     opacity: 1;
-    margin-top: 64px;
 
     @include for-phone-only {
         padding-top: 0px;
@@ -11,8 +12,80 @@
     }
 }
 
+.header {
+    text-align: left;
+    font: normal normal 600 35px/42px Gibson;
+    letter-spacing: 0px;
+    color: #ffffff;
+    opacity: 1;
+    text-transform: uppercase;
+    background: #0b0c08 0% 0% no-repeat padding-box;
+    opacity: 1;
+    display: flex;
+}
+
+.drawer-contents {
+    text-align: left;
+    font: normal normal 600 35px/42px Gibson;
+    letter-spacing: 0px;
+    color: #ffffff;
+    opacity: 1;
+    text-transform: uppercase;
+    background: #0b0c08 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
+.user-detail {
+    // Adds a shadow for elevation level 2 with default color and full opacity:
+    @include mat.elevation(4);
+    padding: 40px;
+    //margin-top: 50%;
+    // margin-bottom: auto;
+    margin-left: 30px;
+    margin-right: 40px;
+    //  vertical-align: middle;
+    //align-self: center;
+    // margin:20px;
+}
+
 .title-group {
     h1 {
         text-transform: uppercase;
     }
+}
+
+mat-drawer-content {
+    padding-top: 0;
+    min-height: calc(100vh - 170px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-center;
+}
+
+mat-drawer {
+    //max-width: fit-content;
+    background: #0b0c08 0% 0% no-repeat padding-box;
+    opacity: 1;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: flex-center;
+    width: 400px;
+}
+
+mat-toolbar {
+    height: 100px;
+}
+
+.profile-toolbar {
+    text-align: left;
+    font: normal normal 600 25px/30px Gibson;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
+mat-card {
+    margin: 20px;
 }
