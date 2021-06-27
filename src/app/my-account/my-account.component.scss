@@ -39,13 +39,8 @@
     // Adds a shadow for elevation level 2 with default color and full opacity:
     @include mat.elevation(4);
     padding: 40px;
-    //margin-top: 50%;
-    // margin-bottom: auto;
     margin-left: 30px;
     margin-right: 40px;
-    //  vertical-align: middle;
-    //align-self: center;
-    // margin:20px;
 }
 
 .title-group {
@@ -63,12 +58,8 @@ mat-drawer-content {
 }
 
 mat-drawer {
-    //max-width: fit-content;
     background: #0b0c08 0% 0% no-repeat padding-box;
     opacity: 1;
-    // display: flex;
-    // flex-direction: column;
-    // align-items: flex-center;
     width: 400px;
 }
 
