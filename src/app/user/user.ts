@@ -1,3 +1,5 @@
+import * as moment from "moment";
+
 export class User {
   constructor(
     public id = -1,
@@ -5,6 +7,8 @@ export class User {
     public firstName = '',
     public lastName = '',
     public email = '',
-    public role = 'Admin'
+    public role = 'Admin',
+    public expiresIn = moment.now(),
+    public token = ''
   ){}
 }
