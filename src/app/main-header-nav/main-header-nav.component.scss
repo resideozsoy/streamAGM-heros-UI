@@ -1,13 +1,18 @@
 .sidenav-container {
   height: 100%;
+  z-index: 1000;
+}
+
+mat-sidenav {
+  height: auto !important
 }
 
 .sidenav {
   width: 200px;
 }
 
-.mat-list-item {
-  color: #ffffff;
+mat-list-item {
+  color: #ffffff!important;
   font-family: nimbus-sans, Roboto, "Helvetica Neue", sans-serif;
 }
 

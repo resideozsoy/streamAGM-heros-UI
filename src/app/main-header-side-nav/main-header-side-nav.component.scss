@@ -12,6 +12,10 @@
   color: #ffffff;
 }
 
+mat-list-item {
+  color: white
+}
+
 .mat-toolbar.mat-primary {
   position: sticky;
   top: 0;
@@ -20,4 +24,15 @@
 
 .mat-drawer {
   background: #0B0C08;
+  font: normal normal normal 16px/22px Nimbus Sans;
+  color: #ffffff;
+  z-index: 10000;
+  height: fit-content;
+
+}
+
+.mat-list-base .mat-list-item {
+  font: normal normal normal 16px/22px Nimbus Sans;
+  color: #ffffff;
+
 }
