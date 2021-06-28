@@ -2,29 +2,29 @@
   class="account-container">
   <mat-drawer #drawer class="drawer" mode="side" opened="true">
     <div fxLayout="column" fxLayoutGap='45px'>
+      <mat-icon class="close" (click)="drawer.close()">close</mat-icon>
       <mat-toolbar class="header">
         <mat-card-header> My Account</mat-card-header>
-        <mat-icon class="close" (click)="drawer.close()">close</mat-icon>
       </mat-toolbar>
 
       <div class="drawer-contents" fxFlex fxFlexLayout='column'>
         <a mat-button [routerLink]="['profile']" > my profile </a>
-        <a mat-button [routerLink]="'/create-account'"> Billing details </a>
-        <a mat-button [routerLink]="'/contacts'"> active subscriptions </a>
-        <a mat-button [routerLink]="'/create-contact'"> Create Contact </a>
-        <a mat-button [routerLink]="'/activities'"> recent transactions </a>
+        <a mat-button [routerLink]="['billing']"> Billing details </a>
+        <a mat-button [routerLink]="['subscriptions']"> active subscriptions </a>
+        <a mat-button [routerLink]="['transactions']"> recent transactions </a>
       </div>
     </div>
 
   </mat-drawer>
-  <mat-drawer-content fxFlex fxFlexLayout='row' fxFlexFill>
+  <mat-drawer-content fxFlex fxFlexLayout='row' fxFlexFill fxLayoutGap='45px'>
+    <mat-icon *ngIf="!drawer.opened" (click)="drawer.toggle()">
+      menu
+    </mat-icon>
     <mat-toolbar class="profile-toolbar">
-      <mat-icon *ngIf="!drawer.opened" (click)="drawer.toggle()">
-        menu
-      </mat-icon>
-      <mat-card-header> My Profile</mat-card-header>
+      
+      <mat-card-header> {{title}}</mat-card-header>
     </mat-toolbar>
 
-    <router-outlet></router-outlet>
+    <router-outlet ></router-outlet>
   </mat-drawer-content>
 </mat-drawer-container>

@@ -16,9 +16,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
 import { VideoPlayerComponent } from './video-player/video-player.component';
 import { ThemeServiceService } from './theme-service.service';
-import {MainFooterComponent} from './main-footer/main-footer.component';
+import { MainFooterComponent } from './main-footer/main-footer.component';
 import { LoginService } from './login.service';
 import { MyProfileComponent } from './my-account/my-profile/my-profile.component';
+import { BillingDetailsComponent } from './my-account/billing-details/billing-details.component';
+import { ActiveSubscriptionsComponent } from './my-account/active-subscriptions/active-subscriptions.component';
+import { RecentTransactionsComponent } from './my-account/recent-transactions/recent-transactions.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,9 @@ import { MyProfileComponent } from './my-account/my-profile/my-profile.component
     LoginComponent,
     VideoPlayerComponent,
     MyProfileComponent,
+    BillingDetailsComponent,
+    ActiveSubscriptionsComponent,
+    RecentTransactionsComponent
   ],
   imports: [
     BrowserModule,
