@@ -1,17 +1,36 @@
 <mat-drawer-container fxFlex fxFlexLayout='row' fxFlexFill [class.drawer-opened]="drawer.opened"
   class="account-container">
   <mat-drawer #drawer class="drawer" mode="side" opened="true">
-    <div fxLayout="column" fxLayoutGap='45px'>
+    <div fxLayout="column" fxFlexFill fxLayoutGap='45px'>
       <mat-icon class="close" (click)="drawer.close()">close</mat-icon>
       <mat-toolbar class="header">
         <mat-card-header> My Account</mat-card-header>
       </mat-toolbar>
 
-      <div class="drawer-contents" fxFlex fxFlexLayout='column'>
-        <a mat-button [routerLink]="['profile']" > my profile </a>
-        <a mat-button [routerLink]="['billing']"> Billing details </a>
-        <a mat-button [routerLink]="['subscriptions']"> active subscriptions </a>
-        <a mat-button [routerLink]="['transactions']"> recent transactions </a>
+      <div class="drawer-contents"  fxLayout='column'>
+        <div fxLayout='row'>
+          <a mat-button [routerLink]="['profile']">
+            <mat-icon>account_box</mat-icon> my profile
+          </a>
+        </div>
+
+        <div fxLayout='row'>
+          <a mat-button [routerLink]="['billing']">
+            <mat-icon>article</mat-icon> Billing details
+          </a>
+        </div>
+
+        <div fxLayout='row'>
+          <a mat-button [routerLink]="['subscriptions']">
+            <mat-icon>not_started</mat-icon> active subscriptions
+          </a>
+        </div>
+
+        <div fxLayout='row'>
+          <a mat-button [routerLink]="['transactions']">
+            <mat-icon>trending_flat</mat-icon> recent transactions
+          </a>
+        </div>
       </div>
     </div>
 
@@ -21,10 +40,10 @@
       menu
     </mat-icon>
     <mat-toolbar class="profile-toolbar">
-      
+
       <mat-card-header> {{title}}</mat-card-header>
     </mat-toolbar>
 
-    <router-outlet ></router-outlet>
+    <router-outlet></router-outlet>
   </mat-drawer-content>
 </mat-drawer-container>
