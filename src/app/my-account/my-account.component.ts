@@ -23,13 +23,6 @@ export class MyAccountComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize(event: { target: { innerWidth: number; }; }) {
-    // if (event.target.innerWidth < 768) {
-    //   this.sidenav.fixedTopGap = 55;
-    //   this.opened = false;
-    // } else {
-    //   this.sidenav.fixedTopGap = 55
-    //   this.opened = true;
-    // }
   }
 
   isBiggerScreen() {

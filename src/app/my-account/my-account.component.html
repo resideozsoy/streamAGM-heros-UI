@@ -8,12 +8,11 @@
       </mat-toolbar>
 
       <div class="drawer-contents" fxFlex fxFlexLayout='column'>
-        <a mat-button [routerLink]="'/accounts'"> Accounts </a>
-        <a mat-button [routerLink]="'/create-account'"> Create Account </a>
-        <a mat-button [routerLink]="'/contacts'"> Contacts </a>
+        <a mat-button [routerLink]="['profile']" > my profile </a>
+        <a mat-button [routerLink]="'/create-account'"> Billing details </a>
+        <a mat-button [routerLink]="'/contacts'"> active subscriptions </a>
         <a mat-button [routerLink]="'/create-contact'"> Create Contact </a>
-        <a mat-button [routerLink]="'/activities'"> Activities </a>
-        <a mat-button [routerLink]="'/create-activity'"> Create Activity </a>
+        <a mat-button [routerLink]="'/activities'"> recent transactions </a>
       </div>
     </div>
 
@@ -25,34 +24,7 @@
       </mat-icon>
       <mat-card-header> My Profile</mat-card-header>
     </mat-toolbar>
-    <form fxFlex fxFlexLayout='row' fxFlexFill>
-      <mat-card fxFlex fxFlexLayout='row' fxFlexFill>
 
-        <mat-card-content fxLayout='column'>
-          <label for='name'>name</label>
-          <mat-form-field>
-
-            <input matInput name='name'>
-          </mat-form-field>
-          <label for='lastname'>last Name</label>
-          <mat-form-field>
-
-            <input matInput name='lastname'>
-          </mat-form-field>
-          <label for='email'>email</label>
-          <mat-form-field>
-
-            <input matInput type='email' name='email'>
-          </mat-form-field>
-
-        </mat-card-content>
-        <mat-card-footer>
-          <mat-toolbar class="profile-toolbar">
-            <button color='warn' mat-raised-button (click)="drawer.toggle()">update my profile</button>
-          </mat-toolbar>
-        </mat-card-footer>
-      </mat-card>
-    </form>
-
+    <router-outlet></router-outlet>
   </mat-drawer-content>
 </mat-drawer-container>

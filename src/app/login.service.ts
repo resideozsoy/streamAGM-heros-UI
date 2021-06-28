@@ -71,6 +71,11 @@ export class LoginService {
     localStorage.setItem("expires_at", JSON.stringify(expiresAt.valueOf()));
   }
 
+  ngOnDestroy() {
+    this.logout();
+    this.loggedIn.complete();
+  }
+
   logout() {
     this.loggedIn.next(false);
     localStorage.removeItem("token");

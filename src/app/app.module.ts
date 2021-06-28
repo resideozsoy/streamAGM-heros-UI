@@ -18,6 +18,8 @@ import { VideoPlayerComponent } from './video-player/video-player.component';
 import { ThemeServiceService } from './theme-service.service';
 import {MainFooterComponent} from './main-footer/main-footer.component';
 import { LoginService } from './login.service';
+import { MyProfileComponent } from './my-account/my-profile/my-profile.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +30,7 @@ import { LoginService } from './login.service';
     MyAccountComponent,
     LoginComponent,
     VideoPlayerComponent,
+    MyProfileComponent,
   ],
   imports: [
     BrowserModule,

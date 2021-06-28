@@ -1,43 +1,28 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { HomeComponent } from '../home/home.component';
-//import { UserComponent } from './user/user.component';
-//import { LoginComponent } from '../user/login.component';
+import { CommonModule } from '@angular/common';
+import { Route, RouterModule } from '@angular/router';
+import { MyProfileComponent } from './my-profile/my-profile.component';
+import { MyAccountComponent } from './my-account.component';
+
+const routes: Route[] = [{
+  path: '',
+  component: MyAccountComponent,
+  children: [
+    { path: '', redirectTo: 'profile', pathMatch: 'full' },
+    { path: 'profile', component: MyProfileComponent },
+    { path: '**', redirectTo: 'profile', pathMatch: 'full' }
+  ]
+}];
 
 @NgModule({
-  imports: [
-    RouterModule.forChild([
-      {
-        path: '',
-        component: HomeComponent
-      },
-      // {
-      //   path: ':id',
-      //   component: ProductDetailComponent,
-      //   resolve: { resolvedData: ProductResolver }
-      // },
-      // {
-      //   path: ':id/edit',
-      //   component: ProductEditComponent,
-      //   canDeactivate: [ProductEditGuard],
-      //   resolve: { resolvedData: ProductResolver },
-      //   children: [
-      //     { path: '', redirectTo: 'info', pathMatch: 'full' },
-      //     { path: 'info', component: ProductEditInfoComponent },
-      //     { path: 'tags', component: ProductEditTagsComponent }
-      //   ]
-      // }
-    ])
-  ],
   declarations: [
-    // ProductListComponent,
-    // ProductDetailComponent,
-    // ProductEditComponent,
-    // ProductEditInfoComponent,
-    // ProductEditTagsComponent
-  
-    //UserComponent,
-    //LoginComponent
+  ],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes)
+  ],
+  exports: [
+    RouterModule
   ]
 })
 export class AccountModule { }
