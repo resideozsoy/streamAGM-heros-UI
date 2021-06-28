@@ -37,8 +37,21 @@
     text-transform: uppercase;
     background: #0b0c08 0% 0% no-repeat padding-box;
     opacity: 1;
+    div {
+        border-top: 1px solid #d2b085;
+    }
+
+    div:last-child {
+        border-bottom: 1px solid #d2b085;
+    }
     a {
-        width:100%;
+        min-height: 60px;
+        margin: 0;
+        padding-top: 15px;
+        padding-left: 30px;
+        mat-icon {
+            padding-right: 20px;
+        }
     }
 }
 
